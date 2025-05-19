@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 20px;
+  padding: 10px 20px;
   color: white;
   font-family: "Arial", sans-serif;
   position: fixed;
@@ -64,7 +64,7 @@
 }
 
 .hamburger div {
-  width: 25px;
+  width: 30px;
   height: 3px;
   background-color: white;
   transition: 0.3s;
@@ -98,9 +98,10 @@
     top: 70px;
     right: 0;
     width: 220px;
-    border-radius: 5px;
+    border-radius: 8px;
     z-index: 999;
     padding: 15px;
+    overflow: hidden;
   }
 
   .nav-menu.show {
@@ -119,7 +120,7 @@
   }
 
   .logo {
-    height: 40px;
+    height: 50px;
   }
 
   .nav-menu {
@@ -129,4 +130,21 @@
   .nav-menu li {
     font-size: 14px;
   }
+
+  .hamburger {
+    gap: 3px;
+  }
+}
+
+/* Hamburger Animation */
+.hamburger.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }

@@ -5,6 +5,7 @@
     flex-direction: column;
     gap: 35px;
     animation: fadeIn 1.2s ease-in-out both;
+    padding: 25px;
 }
 
 @keyframes fadeIn {
@@ -113,64 +114,6 @@
     transform: scale(1.05);
 }
 
-@media (max-width: 1024px) {
-    .hero{
-        display: flex;
-        flex-direction: column;
-        gap: 80px;
-    }
-
-    #img1{
-        width: 300px;
-    }
-
-    .hero h1 {
-        font-size: 44px;
-        width: 90%;
-    }
-
-    #btns{
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .hero-connect,
-    .hero-resume {
-        padding: 15px 35px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .hero {
-        display: flex;
-        gap: 80px;
-        margin-top: 40px;
-    }
-
-    .hero h1 {
-        font-size: 20px;
-        width: 100%;
-    }
-
-    .hero-connect,
-    .hero-resume {
-        width: 100%;
-        padding: 14px 20px;
-    }
-
-    #img1{
-        width: 250px;
-    }
-
-    #btns {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-    }
-}
-
 
 /* Connect With Me button */
 .hero-connect-btn {
@@ -259,6 +202,31 @@
         padding: 10px 15px;
         font-size: 16px;
     }
+      .hero{
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    #img1{
+        width: 300px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+        width: 90%;
+    }
+
+    #btns{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero-connect,
+    .hero-resume {
+        padding: 15px 35px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -273,8 +241,34 @@
     .hero-social-links a {
         width: 80%;
         text-align: center;
-        padding: 14px 0;
+        padding-left: 10%;
         font-size: 18px;
+    }
+        .hero {
+        display: flex;
+        gap: 80px;
+        margin-top: 40px;
+    }
+
+    .hero h1 {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .hero-connect,
+    .hero-resume {
+        width: 100%;
+        padding: 14px 20px;
+    }
+
+    #img1{
+        width: 250px;
+    }
+
+    #btns {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
     }
 }
 

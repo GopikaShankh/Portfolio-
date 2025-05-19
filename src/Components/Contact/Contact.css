@@ -6,8 +6,8 @@
     animation: fadeIn 1.5s ease-in-out;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
-    padding: 0 10%;
     max-height: 800px;
+    padding: 25px;
 }
 
 .heading {
