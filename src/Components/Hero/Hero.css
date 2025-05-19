@@ -1,0 +1,303 @@
+.hero {
+    margin-top: 7%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+    animation: fadeIn 1.2s ease-in-out both;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile_img {
+    border-radius: 50%;
+    width: 300px;
+    margin-top: 35px;
+    animation: floatIn 1.4s ease-out both;
+}
+
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(-10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.hero h1 {
+    text-align: center;
+    width: 70%;
+    font-size: 60px;
+    font-weight: 600;
+    animation: slideUp 1.5s ease-out both;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 span {
+    background: linear-gradient(270deg, #Df8908 10%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-action {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    animation: fadeButtons 1.6s ease-out both;
+}
+
+@keyframes fadeButtons {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hero-connect, .hero-resume {
+    padding: 20px 45px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-connect {
+    background: linear-gradient(264deg, #Df8908 -5.09%, #B415FF);
+    color: #fff;
+    box-shadow: 0px 4px 12px rgba(212, 98, 255, 0.5);
+}
+
+.hero-resume {
+    border: 2px solid #FFF;
+    color: #fff;
+    background: transparent;
+}
+
+.hero-connect:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(212, 98, 255, 0.7);
+    border: 2px solid white;
+}
+
+.hero-resume:hover {
+    border-color: #B415FF;
+    transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .hero{
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    #img1{
+        width: 300px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+        width: 90%;
+    }
+
+    #btns{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero-connect,
+    .hero-resume {
+        padding: 15px 35px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .hero {
+        display: flex;
+        gap: 80px;
+        margin-top: 40px;
+    }
+
+    .hero h1 {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .hero-connect,
+    .hero-resume {
+        width: 100%;
+        padding: 14px 20px;
+    }
+
+    #img1{
+        width: 250px;
+    }
+
+    #btns {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+
+/* Connect With Me button */
+.hero-connect-btn {
+    padding: 20px 45px;
+    font-size: 24px;
+    font-weight: 600;
+    background: linear-gradient(264deg, #Df8908 -5.09%, #B415FF);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(212, 98, 255, 0.5);
+    transition: all 0.3s ease;
+    /* match hero-connect style */
+}
+
+.hero-connect-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(212, 98, 255, 0.7);
+    border: 2px solid white;
+}
+
+/* Social links container */
+.hero-social-links {
+    display: flex;
+    gap: 20px;
+    margin-left: 10px;
+    justify-content: center;
+    animation: fadeButtons 0.8s ease forwards;
+}
+
+.hero-social-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    white-space: nowrap;
+    /* match button pill shape */
+}
+
+.hero-social-links a:nth-child(1) {
+    background-color: #0077b5; /* LinkedIn blue */
+}
+
+.hero-social-links a:nth-child(2) {
+    background-color: #333; /* GitHub dark */
+}
+
+.hero-social-links a:nth-child(3) {
+    background-color: #D44638; /* Gmail red */
+}
+
+.hero-social-links a:hover {
+    opacity: 0.8;
+}
+
+/* Keep your existing fadeButtons animation */
+@keyframes fadeButtons {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Adjust responsive for social links */
+@media (max-width: 1024px) {
+    .hero-social-links {
+        gap: 15px;
+        margin-left: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-social-links a {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-social-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-left: 0;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-social-links a {
+        width: 80%;
+        text-align: center;
+        padding: 14px 0;
+        font-size: 18px;
+    }
+}
+
+.fade-in {
+  animation: fadeInSlide 0.3s ease forwards;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus outlines for accessibility */
+.hero-connect-btn:focus,
+.hero-resume a:focus,
+.hero-social-links a:focus {
+  outline: 2px solid #B415FF;
+  outline-offset: 3px;
+}
+
