@@ -32,7 +32,7 @@ const Navbar = () => {
       <ul className={`nav-menu ${menuOpen ? "show" : ""}`}>
         <li onClick={() => handleScroll("home")}>Home</li>
         <li onClick={() => handleScroll("about")}>About</li>
-        <li onClick={() => handleScroll("mywork")}>My Work</li>
+        <li onClick={() => handleScroll("mywork")}>My Projects</li>
         <li onClick={() => handleScroll("contact")}>Contact</li>
       </ul>
     </nav>

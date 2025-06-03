@@ -37,7 +37,7 @@ const MyWorkData = () => {
   return (
     <section className="portfolio" id="portfolio">
       <h2 id="h2" className="heading">
-        MyProjects
+        My Projects
       </h2>
 
       <div className="portfolio-container scrollable no-scrollbar" ref={scrollRef}>

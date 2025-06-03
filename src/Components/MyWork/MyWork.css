@@ -1,88 +1,101 @@
-
-/* === General Styling === */
 .heading {
     position: relative;
-    padding:  1.5rem 30px;
+    padding: 1rem;
     font-size: 60px;
     font-weight: 600;
     text-align: center;
+    color: white;
+    /* text-shadow: 2px 2px 8px rgba(0, 255, 255, 0.2); */
+    animation: glow 2s infinite alternate;
 }
 
+
+/* === Links === */
 a {
     text-decoration: none;
     color: white;
+    transition: color 0.3s;
 }
 
+a:hover {
+    color: var(--main-color);
+}
+
+/* === Portfolio Section === */
 .portfolio {
     background: var(--snd-bg-color);
+    padding: 50px 25px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    padding: 25px;
+    align-items: center;
 }
 
-.portfolio h2 {
-    margin-bottom: 1rem;
-}
-
+/* === Portfolio Container === */
 .portfolio-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-items: center;
     gap: 2rem;
-    justify-content: center;
-    max-height: none;
-    overflow-y: auto;
     width: 100%;
+    max-width: 1200px;
+    overflow-y: auto;
+    padding-right: 10px;
     scrollbar-width: none;
-    scrollbar-color: black #333232;
     transition: all 0.3s ease;
+    text-align: center;
+    margin-top: 2rem;
 }
 
 .portfolio-container.scrollable {
     max-height: 650px;
-    overflow-y: auto;
-    margin: 0 auto;
-    padding-right: 10px;
-    box-sizing: border-box;
 }
 
-/* === Portfolio Box Styling === */
-.portfolio-container .portfolio-box {
+/* === Portfolio Boxes === */
+.portfolio-box {
     position: relative;
-    border-radius: 2rem;
-    box-shadow: 0 0 1rem var(--bg-color);
+    border-radius: 20px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.portfolio-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 255, 255, 0.4);
 }
 
 .portfolio-box img {
     width: 100%;
     height: auto;
-    transition: .5s ease;
-    opacity: 0.8;
-    border-radius: 1.5rem;
+    border-radius: 20px;
+    opacity: 0.9;
+    transition: 0.5s ease;
+    object-fit: cover;
 }
 
 .portfolio-box:hover img {
     transform: scale(1.05);
+    opacity: 1;
 }
 
-.portfolio-box .portfolio-layer {
+/* === Hover Layer === */
+.portfolio-layer {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color));
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 20px;
     text-align: center;
+    color: white;
     transform: translateY(100%);
-    transition: .5s ease;
+    transition: transform 0.5s ease;
+    margin-top: 2rem;
 }
 
 .portfolio-box:hover .portfolio-layer {
@@ -90,23 +103,19 @@ a {
 }
 
 .portfolio-layer h4 {
-    font-size: 2.2rem;
-    text-align: center;
+    font-size: 2rem;
+    color: var(--main-color);
     margin-bottom: 0.5rem;
 }
 
 .portfolio-layer p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 /* === Responsive Design === */
 @media (max-width: 1024px) {
     .portfolio-layer h4 {
-        font-size: 2rem;
-    }
-
-    .portfolio-layer p {
-        font-size: 1.1rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -115,12 +124,8 @@ a {
         font-size: 40px;
     }
 
-    .portfolio-container {
-        gap: 1.5rem;
-    }
-
     .portfolio-layer h4 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .portfolio-layer p {
@@ -150,10 +155,3 @@ a {
         font-size: 0.9rem;
     }
 }
-
-@media (max-width: 412px) {
-    .portfolio-box {
-        width: 100%;
-        border-radius: 15px;
-    }
-}    

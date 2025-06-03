@@ -10,12 +10,16 @@ const About = () => {
                 <h1>About me</h1>
             </div>
             <div className="about-sections">
-                <div className="about-left">
+                {/* <div className="about-left">
                     <img id = "img" src={profile_img} alt="" />
-                </div>
+                </div> */}
                 <div className="about-right">
                     <div className="about-para">
-                        <p>I am skilled in HTML, CSS, and JavaScript, with a strong foundation in creating responsive and user-friendly websites. I am eager to learn and grow in modern frameworks like React and Angular, while also exploring backend technologies to become a well-rounded developer. I am passionate about solving problems, collaborating with teams, and contributing to dynamic projects that make an impact, while continuously improving my technical and professional skills.</p>
+                        <p>Hi, I’m Gopika Shankh, a passionate web developer with a solid foundation in HTML, CSS, and JavaScript. I’m currently exploring React and backend technologies like Node.js and MongoDB to become a skilled full-stack developer. I love creating responsive, user-friendly interfaces and solving real-world problems through clean code.
+
+<br /><br />I thrive in collaborative environments and value teamwork, effective communication, and continuous self-improvement. With a strong desire to grow in the tech field, I actively build projects and expand my skill set. Outside of coding, I’m a state-level rugby player who enjoys music and indoor games that challenge the mind.
+
+</p>
                     </div>
                     <div className="abiyt-skills">
                         <div className="about-skill"><p>HTML & CSS</p><hr style={{width:"70%"}}/></div>
