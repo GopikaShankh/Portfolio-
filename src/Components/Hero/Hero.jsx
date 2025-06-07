@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Hero.css";
 import profile_img from "../../assets/Gopika.png";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -33,15 +34,30 @@ const Hero = () => {
     <div className="hero">
       <img
         id="img1"
-        className="profile_img"
+        className="profile_img fade-in"
         src={profile_img}
         alt="Gopika Shankh smiling"
       />
-      <h1 id="h1">
-        <span>Hi, I’m Gopika Shankh,</span> a passionate and motivated fresher
-        in frontend development.
+      <h1 id="h1" className="fade-in">
+        <span>Hi, I’m Gopika Shankh,</span>{" "}
+        <span style={{ color: "#00bfff", fontWeight: "bold" }}>
+          <Typewriter
+            words={["Frontend Developer", "React Enthusiast", "Creative Coder"]}
+            loop={true}
+            cursor
+            cursorStyle="_"
+            typeSpeed={80}
+            deleteSpeed={50}
+            delaySpeed={1500}
+          />
+        </span>
       </h1>
-      <div id="btns" className="hero-action">
+
+      <p className="tagline fade-in">
+        Turning ideas into beautiful and responsive web interfaces ✨
+      </p>
+
+      <div id="btns" className="hero-action fade-in">
         <button
           className="hero-connect-btn"
           onClick={toggleLinks}
@@ -76,18 +92,15 @@ const Hero = () => {
             >
               <FaGithub className="icon" /> GitHub
             </a>
-            <a
-              href="mailto:gopika7@gmail.com"
-              tabIndex={showLinks ? 0 : -1}
-            >
+            <a href="mailto:gopika7@gmail.com" tabIndex={showLinks ? 0 : -1}>
               <FaEnvelope className="icon" /> Email Me
             </a>
           </div>
         )}
 
         <div className="hero-resume">
-          <a href="/Gopika_Shankh_Resume.pdf" download>
-            Download My Resume
+          <a href="/Gopika_Shankh_Resume.pdf" download className="resume-download-btn">
+            📄 Download My Resume
           </a>
         </div>
       </div>

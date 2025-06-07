@@ -1,89 +1,126 @@
+/* Container & Layout */
 .about {
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 80px;
-    padding: 5rem;
+    padding: 5rem 2rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
 }
 
+/* Title */
 .about-title {
     position: relative;
-}
-
-#img {
-    border-radius: 30px;
+    text-align: center;
 }
 
 .about-title h1 {
-    padding: 0px 30px;
-    font-size: 80px;
-    font-weight: 600;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(180, 21, 255, 0.5);
+    padding: 0 30px;
+    margin: 0;
 }
 
-.about-title img {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-}
-
+/* Sections */
 .about-sections {
     display: flex;
     gap: 80px;
+    width: 100%;
+    justify-content: center;
 }
 
+/* Right content */
 .about-right {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 80px;
 }
 
+/* Paragraph */
 .about-para {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 1.65;
     font-weight: 500;
-    margin-top: 2rem;
+    color: #fff;
+    letter-spacing: 0.02em;
 }
 
+/* Skills container */
+.about-skills-container {
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+}
+
+/* Each skill section */
+.skills-section {
+    flex: 1;
+}
+
+/* Section headers */
+.skills-section h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #b415ff;
+    padding-bottom: 8px;
+}
+
+/* Skills list (you already have this, no change except smaller gap) */
 .about-skills {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
 
+/* Skill item */
 .about-skill {
     display: flex;
     gap: 50px;
     align-items: center;
-    transition: 0.3s;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .about-skill p {
     min-width: 150px;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 500;
+    color: #fff;
+    user-select: none;
 }
 
+/* Colored skill bars - keep your gradient and radius */
 .about-skill hr {
     outline: none;
     border: none;
     width: 50%;
-    height: 8px;
+    height: 10px;
     border-radius: 50px;
     background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
+    box-shadow: 0 2px 8px rgba(180, 21, 255, 0.3);
 }
 
+/* Hover zoom effect */
 .about-skill:hover {
     transform: scale(1.05);
-    transition: 0.3s;
+    transition: transform 0.3s ease;
 }
 
+/* Responsive Improvements */
 @media (max-width: 1024px) {
     .about {
-        margin: 60px 5%;
+        padding: 3rem 1.5rem;
         gap: 60px;
     }
 
@@ -93,7 +130,7 @@
 
     .about-sections {
         flex-direction: column;
-        gap: 40px;
+        gap: 50px;
     }
 
     .about-para {
@@ -103,99 +140,38 @@
     .about-skill p {
         font-size: 18px;
     }
-}
 
-/* Large phones and smaller tablets (768px and below) */
-@media (max-width: 853px) {
-    .about {
-        margin: 50px 4%;
-        gap: 70px;
-    }
-
-    .about-title h1 {
-        font-size: 40px;
-        padding: 0 20px;
-    }
-
-    #img {
-        margin-left: 9rem;
-        border-radius: 30px;
-        margin-top: 50px;
-    }
-
-    .about-para {
-        font-size: 25px;
-    }
-
-    .about-skill p {
-        font-size: 20px;
-        /* padding: 10px; */
-    }
-
-    .about-skill hr {
-        width: 80%;
+    .skills-section h3 {
+        font-size: 24px;
+        margin-bottom: 18px;
     }
 }
 
-/* Small Phones (max-width: 480px) */
 @media (max-width: 540px) {
     .about {
-        margin: 30px;
+        padding: 2rem 1rem;
         gap: 40px;
     }
 
     .about-title h1 {
-        font-size: 30px;
+        font-size: 32px;
         padding: 0 10px;
     }
 
     .about-para {
-        font-size: 18px;
-        /* max-width: 380px; */
+        font-size: 16px;
     }
 
     .about-skill p {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .about-skill hr {
-        width: 10%;
+        width: 80%;
+        height: 8px;
     }
 
-    #img {
-        margin-left: 0;
-        width: 340px;
-        border-radius: 30px;
-    }
-}
-
-@media (max-width: 412px) {
-    .about {
-        /* max-width: 280px; */
-        align-items: center;
-    }
-
-    .abiyt-skills {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        /* margin-left: 10%; */
-    }
-
-
-    .about-para {
-        /* margin-left: 10%; */
+    .skills-section h3 {
         font-size: 20px;
-    }
-
-    .about-skill p {
-        font-size: 17px;
-    }
-
-
-    #img {
-        margin-left: 0;
-        width: 300px;
-        border-radius: 30px;
     }
 }
