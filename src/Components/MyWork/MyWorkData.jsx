@@ -8,16 +8,75 @@ import library from "../../assets/libery.png";
 import covidDashboard from "../../assets/covidDashboard.png";
 import "./MyWork.css";
 
+const projects = [
+  {
+    title: "Quiz Page",
+    img: quiz,
+    url: "https://gopikashankh.github.io/Quiz/",
+    description: "Basic HTML/CSS/JS Quiz App",
+    tags: ["HTML", "CSS", "JS"],
+    repo: "https://github.com/GopikaShankh/Quiz"
+  },
+  {
+    title: "Covid Dashboard",
+    img: covidDashboard,
+    url: "https://covid-dashboard1-orpin.vercel.app/",
+    description: "Real-time COVID data using API",
+    tags: ["React", "API", "CSS"],
+    repo: "https://github.com/GopikaShankh/covid-dashboard"
+  },
+  {
+    title: "Weather App",
+    img: weather,
+    url: "https://gopikashankh.github.io/weather_app/",
+    description: "Shows current weather and forecast",
+    tags: ["JS", "API", "Responsive"],
+    repo: "https://github.com/GopikaShankh/weather_app"
+  },
+  {
+    title: "Drum Kit",
+    img: drumkit,
+    url: "https://gopikashankh.github.io/Drum_kit/",
+    description: "Interactive musical drum kit",
+    tags: ["HTML", "CSS", "JS"],
+    repo: "https://github.com/GopikaShankh/Drum_kit"
+  },
+  {
+    title: "Shoes Page",
+    img: shoe,
+    url: "https://nivya.netlify.app/",
+    description: "E-commerce shoes landing page",
+    tags: ["HTML", "CSS", "Responsive"],
+    repo: "https://github.com/GopikaShankh/shoe-page"
+  },
+  {
+    title: "Quiz with API",
+    img: quizWithApi,
+    url: "https://gopikashankh.github.io/QuizPage/",
+    description: "Quiz app using Open Trivia API",
+    tags: ["JS", "API", "Quiz"],
+    repo: "https://github.com/GopikaShankh/QuizPage"
+  },
+  {
+    title: "Library Management",
+    img: library,
+    url: "https://gopikashankh.github.io/library_management/",
+    description: "Library project using HTML, CSS & JS",
+    tags: ["HTML", "CSS", "JS"],
+    repo: "https://github.com/GopikaShankh/library_management"
+  }
+];
+
 const MyWorkData = () => {
   const scrollRef = useRef(null);
 
-  // Auto Scroll Animation
   useEffect(() => {
     const scrollContainer = scrollRef.current;
-    const scrollSpeed = 1; // Adjust scroll speed here
+    const scrollSpeed = 1;
+    let isPaused = false;
 
     const autoScroll = () => {
-      if (scrollContainer) {
+      if (!isPaused && scrollContainer) {
         if (
           scrollContainer.scrollTop + scrollContainer.clientHeight >=
           scrollContainer.scrollHeight
@@ -31,93 +90,43 @@ const MyWorkData = () => {
 
     const intervalId = setInterval(autoScroll, 50);
 
-    return () => clearInterval(intervalId);
+    scrollContainer.addEventListener("mouseenter", () => isPaused = true);
+    scrollContainer.addEventListener("mouseleave", () => isPaused = false);
+
+    return () => {
+      clearInterval(intervalId);
+      scrollContainer.removeEventListener("mouseenter", () => {});
+      scrollContainer.removeEventListener("mouseleave", () => {});
+    };
   }, []);
 
   return (
     <section className="portfolio" id="portfolio">
-      <h2 id="h2" className="heading">
-        My Projects
-      </h2>
+      <h2 id="h2" className="heading">My Projects</h2>
 
       <div className="portfolio-container scrollable no-scrollbar" ref={scrollRef}>
-        <div className="portfolio-box">
-          <a href="https://gopikashankh.github.io/Quiz/">
-            <img src={quiz} alt="Quiz Project" />
-          </a>
-          <div className="portfolio-layer">
-            <h4>
-              <a href="https://gopikashankh.github.io/Quiz/">Quiz Page</a>
-            </h4>
-            <p>Watch this page</p>
+        {projects.map((project, index) => (
+          <div className="portfolio-box" key={index}>
+            <img src={project.img} alt={project.title} />
+            <div className="portfolio-layer">
+              <h4>
+                <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title}`}>
+                  {project.title}
+                </a>
+              </h4>
+              <p>{project.description}</p>
+              <div className="tags">
+                {project.tags.map((tag, idx) => (
+                  <span key={idx}>{tag}</span>
+                ))}
+              </div>
+              <div className="project-links">
+                <a href={project.url} target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a href={project.repo} target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className="portfolio-box">
-          <img src={covidDashboard} alt="covid dashboard" />
-          <div className="portfolio-layer">
-            <h4>
-              <a href="https://covid-dashboard1-orpin.vercel.app/">
-                Covid Dashboard
-              </a>
-            </h4>
-            <p>Watch this page</p>
-          </div>
-        </div>
-
-        <div className="portfolio-box">
-          <img src={weather} alt="Weather App Project" />
-          <div className="portfolio-layer">
-            <h4>
-              <a href="https://gopikashankh.github.io/weather_app/">
-                Weather App
-              </a>
-            </h4>
-            <p>Watch this page</p>
-          </div>
-        </div>
-
-        <div className="portfolio-box">
-          <img src={drumkit} alt="Drum Kit Project" />
-          <div className="portfolio-layer">
-            <h4>
-              <a href="https://gopikashankh.github.io/Drum_kit/">Drum Kit</a>
-            </h4>
-            <p>Watch this page</p>
-          </div>
-        </div>
-
-        <div className="portfolio-box">
-          <img src={shoe} alt="Shoe Page Project" />
-          <div className="portfolio-layer">
-            <h4>
-              <a href="https://nivya.netlify.app/">Shoes Page</a>
-            </h4>
-            <p>Watch this page</p>
-          </div>
-        </div>
-
-        <div className="portfolio-box">
-          <img src={quizWithApi} alt="quiz with api" />
-          <div className="portfolio-layer">
-            <h4>
-              <a href="https://gopikashankh.github.io/QuizPage/">Quiz with Api</a>
-            </h4>
-            <p>Watch this page</p>
-          </div>
-        </div>
-
-        <div className="portfolio-box">
-          <img src={library} alt="Library Management Project" />
-          <div className="portfolio-layer">
-            <h4>
-              <a href="https://gopikashankh.github.io/library_management/">
-                Library
-              </a>
-            </h4>
-            <p>Watch this page</p>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
